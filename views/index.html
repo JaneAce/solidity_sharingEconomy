@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>区块链学院的共享经济</title>
+<!-- 
+Journey Template 
+http://www.templatemo.com/tm-511-journey
+-->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="/stylesheets/templatemo-style.css">
+    <link rel="stylesheet"  href="/stylesheets/form.css"/>
+    <script src="/javascripts/jquery-2.1.4.min.js"></script>
+    <script src="/javascripts/lend.js"></script>
+    </head>
+      <body>
+        <!-- 导航栏 -->
+    <div class="tm-main-content" id="top">
+        <div class="tm-top-bar-bg"></div>    
+        <div class="tm-top-bar" id="tm-top-bar">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg narbar-light">
+                        <a class="navbar-brand mr-auto" href="#">
+                            <img src="/images/logo.jpg" alt="Site logo" width="150px" height="150px">
+                            BLOCKCHAIN
+                        </a>
+                        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                            <ul class="navbar-nav ml-auto">
+                              <li class="nav-item">
+                                <a class="nav-link  active" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/lend" id="lend">借出商品人</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/borrow" id="borrow">商品出借人</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- .tm-top-bar -->
+        <div class="tm-page-wrap mx-auto">
+            <section class="tm-banner">
+                <div class="tm-container-outer tm-banner-bg">
+                    <div class="container">
+                        <div class="row tm-banner-row tm-banner-row-header">
+                            <div class="col-xs-12">
+                                <div class="tm-banner-header">
+                                    <h1 class="text-uppercase tm-banner-title">Let's begin</h1>
+                                    <img src="/images/dots-3.png" alt="Dots">
+                                    <p class="tm-banner-subtitle" id="mkaccount"></p>
+                                    <a class="tm-down-arrow-link" id="approve" style="cursor:hand">授权该网站</a>
+                                    <a class="tm-down-arrow-link" id="lookover" style="cursor:hand">查看信箱</a>
+                                     <div style="display: none;" id="askAddStickDiv">
+                                        <table class="table" id="askAddsticktab">
+                                            <tr>
+                                              <td>贴纸名称</td>
+                                              <td>发送地址</td>
+                                            </tr>
+                                            <tr>
+      
+                                            </tr>
+                                          </table>
+                                     </div>       
+                                </div>    
+                            </div>  <!-- col-xs-12 -->                      
+                        </div> <!-- row -->
+                        <div class="row tm-banner-row" id="tm-section-search" style="padding-top: 50px">
+                            <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                <div class="form-row tm-search-form-row">                                
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                        <label for="inputCity">添加贴纸</label>
+                                        <input name="destination" type="text" class="form-control" id="stickName" placeholder="请输入您需要添加的贴纸" autocomplete="off">
+                                        <button type="button" class="btn btn-primary tm-btn tm-btn-search text-uppercase" id="btn_addstick">添加贴纸</button>
+                                    </div>
+                                    </div>
+                                    <div class="form-row tm-search-form-row">                                
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2" style="margin-top: -16%;margin-left: 49%;">
+                                            <label for="inputCity">查询当前账号的余额</label>
+                                            <p type="text" class="form-control" id="AccountERC20Balance"></p>
+                                            <button type="button" class="btn btn-primary tm-btn tm-btn-search text-uppercase" id="getAccountERCBalance">查询当前账号的余额</button>
+                                        </div>
+                                        </div>
+                                    <div class="form-row tm-search-form-row">
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2" >
+                                            <h3>已添加的贴纸</h3>
+                                    <table class="table" id="sticktab">
+                                      <tr>
+                                        <td>贴纸名称</td>
+                                      </tr>
+                                      <tr>
+
+                                      </tr>
+                                    </table>
+                                        </div>
+                                    </div>
+                                    <div class="form-row tm-search-form-row">
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2" style="margin-top: -16%;margin-left: 49%;">
+                                            <h3>公告栏</h3>
+                                    <table class="table" id="addNoticelist">
+                                      <tr>
+                                        <td>贴纸名称</td>
+                                      </tr>
+                                      <tr>
+
+                                      </tr>
+                                    </table>
+                                        </div>
+                                    </div>                              
+                            </form>                             
+                        </div> <!-- row -->
+                        <div class="tm-banner-overlay"></div>
+                    </div>  <!-- .container -->                   
+                </div>     <!-- .tm-container-outer -->                 
+            </section>
+            </div>
+            </div>
+            </div>
+            <footer class="tm-container-outer">
+                <p class="mb-0">Copyright © <span class="tm-current-year">2018</span> Your Company 
+                    
+                . Designed by <a rel="nofollow" href="http://www.google.com/+templatemo" target="_parent">Template Mo</a></p>
+            </footer>
+        </div>
+    </div> <!-- .main-content -->
+
+    <!-- load JS files -->
+    <script src="/web3.min.js"></script>
+    <script src="/pump.js"></script>
+    <script src="/javascripts/popper.min.js"></script>                    <!-- https://popper.js.org/ -->       
+    <script src="/javascripts/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+    <script src="/javascripts/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
+    <script src="/javascripts/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script src="/slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+    <script src="/javascripts/jquery.scrollTo.min.js"></script>           <!-- https://github.com/flesler/jquery.scrollTo -->
+    <script>
+    </script>
+               
+</body>
+</html>
